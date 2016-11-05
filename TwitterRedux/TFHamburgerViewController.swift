@@ -20,6 +20,14 @@ class TFHamburgerViewController: UIViewController {
         }
     }
     
+    var contentViewController: UIViewController!
+        {
+        didSet {
+            view.layoutIfNeeded()
+            contentView.addSubview(contentViewController.view)
+        }
+    }
+    
     var originalLeftMargin:CGFloat!
 
     @IBOutlet weak var leftMarginConstraint: NSLayoutConstraint!

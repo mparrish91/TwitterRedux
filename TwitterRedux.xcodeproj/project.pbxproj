@@ -14,9 +14,13 @@
 		42F4C4001DCD9AF200E29471 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42F4C3FE1DCD9AF200E29471 /* LaunchScreen.storyboard */; };
 		42F4C40C1DCD9C5B00E29471 /* TFHamburgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F4C40B1DCD9C5B00E29471 /* TFHamburgerViewController.swift */; };
 		42F4C40E1DCD9C6500E29471 /* TFMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F4C40D1DCD9C6500E29471 /* TFMenuViewController.swift */; };
+		60BE1F8C95B906B1473B6AC0 /* Pods_TwitterRedux.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 324C6121926F26CB74A0059C /* Pods_TwitterRedux.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1DF8418AE91DF50D2A50C757 /* Pods-TwitterRedux.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterRedux.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterRedux/Pods-TwitterRedux.debug.xcconfig"; sourceTree = "<group>"; };
+		2514FBB54559EBD7063D5A9E /* Pods-TwitterRedux.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterRedux.release.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterRedux/Pods-TwitterRedux.release.xcconfig"; sourceTree = "<group>"; };
+		324C6121926F26CB74A0059C /* Pods_TwitterRedux.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwitterRedux.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42F4C3F21DCD9AF200E29471 /* TwitterRedux.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterRedux.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42F4C3F51DCD9AF200E29471 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42F4C3F71DCD9AF200E29471 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60BE1F8C95B906B1473B6AC0 /* Pods_TwitterRedux.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +49,8 @@
 			children = (
 				42F4C3F41DCD9AF200E29471 /* TwitterRedux */,
 				42F4C3F31DCD9AF200E29471 /* Products */,
+				6B7719DCDF39C74C9652A135 /* Pods */,
+				8B53067A777538CAC18A6706 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,6 +109,23 @@
 			name = "Hamburger Menu";
 			sourceTree = "<group>";
 		};
+		6B7719DCDF39C74C9652A135 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1DF8418AE91DF50D2A50C757 /* Pods-TwitterRedux.debug.xcconfig */,
+				2514FBB54559EBD7063D5A9E /* Pods-TwitterRedux.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8B53067A777538CAC18A6706 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				324C6121926F26CB74A0059C /* Pods_TwitterRedux.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -109,9 +133,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42F4C4041DCD9AF200E29471 /* Build configuration list for PBXNativeTarget "TwitterRedux" */;
 			buildPhases = (
+				ADE1E5EDA0A78FBDB28841C8 /* [CP] Check Pods Manifest.lock */,
 				42F4C3EE1DCD9AF200E29471 /* Sources */,
 				42F4C3EF1DCD9AF200E29471 /* Frameworks */,
 				42F4C3F01DCD9AF200E29471 /* Resources */,
+				2A18CA16CEEE687D89EBAF7E /* [CP] Embed Pods Frameworks */,
+				2C58B13FB9F4403400420E56 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -168,6 +195,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2A18CA16CEEE687D89EBAF7E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TwitterRedux/Pods-TwitterRedux-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2C58B13FB9F4403400420E56 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TwitterRedux/Pods-TwitterRedux-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ADE1E5EDA0A78FBDB28841C8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		42F4C3EE1DCD9AF200E29471 /* Sources */ = {
@@ -298,6 +373,7 @@
 		};
 		42F4C4051DCD9AF200E29471 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1DF8418AE91DF50D2A50C757 /* Pods-TwitterRedux.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TwitterRedux/Info.plist;
@@ -310,6 +386,7 @@
 		};
 		42F4C4061DCD9AF200E29471 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2514FBB54559EBD7063D5A9E /* Pods-TwitterRedux.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TwitterRedux/Info.plist;
@@ -339,6 +416,7 @@
 				42F4C4061DCD9AF200E29471 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

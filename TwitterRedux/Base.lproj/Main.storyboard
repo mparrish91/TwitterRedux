@@ -79,7 +79,7 @@
         <!--Menu View Controller-->
         <scene sceneID="47M-jy-H0b">
             <objects>
-                <viewController storyboardIdentifier="MenuViewController" id="ESB-H0-c4e" customClass="MenuViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuViewController" id="ESB-H0-c4e" customClass="TFMenuViewController" customModule="TwitterRedux" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Vl4-Yb-KMS"/>
                         <viewControllerLayoutGuide type="bottom" id="OvD-VE-2ZN"/>
@@ -95,11 +95,11 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pCh-Fa-ZYf" id="t7r-E9-vdB">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tRy-KH-dEL">
-                                                    <frame key="frameInset" minX="15" width="345" height="43"/>
+                                                    <frame key="frameInset" minX="15" width="345" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -123,6 +123,9 @@
                             <constraint firstItem="OvD-VE-2ZN" firstAttribute="top" secondItem="ZuM-bw-NFb" secondAttribute="bottom" id="v5r-eH-6Jl"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="menuTableView" destination="OaM-4V-MVw" id="chX-Qe-YtJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oGu-VZ-jpM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
