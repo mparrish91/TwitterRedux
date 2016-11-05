@@ -10,7 +10,7 @@ import UIKit
 
 class TFMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet var menuTableView: UIView!
+    @IBOutlet var menuTableView: UITableView!
     var hamburgerViewController: TFHamburgerViewController!
     private var greenNavigationController: UIViewController!
     private var blueNavigationController: UIViewController!
@@ -34,6 +34,8 @@ class TFMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         hamburgerViewController.contentViewController = greenNavigationController
 
+        
+        menuTableView.tableFooterView = UIView()
 
     }
     
@@ -63,12 +65,11 @@ class TFMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath) as! TFMenuTableViewCell
         
-        let titles = ["", "Profile", "Mentions", "Timeline"]
-        let icons = ["", "profile", "mentions", "feed"]
+        let titles = ["", "profile", "mentions", "feed"]
 
         cell.titleLabel?.text = titles[indexPath.row]
-        
-        cell.iconImageView.image = UIImage(named: icons[indexPath.row])
+    
+        cell.iconImageView.image = UIImage(named: titles[indexPath.row])
             
             return cell
 
