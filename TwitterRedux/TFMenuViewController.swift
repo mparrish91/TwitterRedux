@@ -39,29 +39,72 @@ class TFMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return viewControllers.count
+        return 4
         
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath) as UITableViewCell
+        if indexPath.row == 0
+        {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "MenuHeaderCell", for: indexPath) as! TFMenuHeaderTableViewCell
+            
+            cell.nameLabel?.text = "Gil Turner"
+            cell.descriptionLabel?.text = "Co-founder at YC"
+            
+            cell.profilePhotoImageView.image = UIImage(named: "profile")
+            
+            
+            return cell
+
+        }
+        else
+        {
         
-        let titles = ["Profile", "Mentions", "Timeline"]
-        cell.textLabel?.text = titles[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath) as! TFMenuTableViewCell
+        
+        let titles = ["", "Profile", "Mentions", "Timeline"]
+        let icons = ["", "profile", "mentions", "feed"]
+
+        cell.titleLabel?.text = titles[indexPath.row]
+        
+        cell.iconImageView.image = UIImage(named: icons[indexPath.row])
+            
+            return cell
+
+        }
 
         
-        
-        return cell
         
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        hamburgerViewController.contentViewController = viewControllers[indexPath.row]
+        if indexPath.row == 0
+        {
+            
+        }
+        else{
+            hamburgerViewController.contentViewController = viewControllers[indexPath.row - 1]
+
+        }
+        
 
         
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        if indexPath.row == 0
+        {
+            return 100
+        }
+        else
+        {
+            return 50
+
+        }
     }
 
 }
