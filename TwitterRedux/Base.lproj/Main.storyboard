@@ -68,7 +68,7 @@
                     <view key="view" contentMode="scaleToFill" id="eqA-xt-7J3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ukz-wO-Su8"/>
                 </viewController>
@@ -91,7 +91,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZuM-bw-NFb">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="tRy-KH-dEL" style="IBUITableViewCellStyleDefault" id="pCh-Fa-ZYf">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuCell" textLabel="tRy-KH-dEL" style="IBUITableViewCellStyleDefault" id="pCh-Fa-ZYf">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pCh-Fa-ZYf" id="t7r-E9-vdB">
@@ -142,7 +142,7 @@
                     <view key="view" contentMode="scaleToFill" id="Y2x-sQ-2h7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="IS2-ae-7zj"/>
                 </viewController>
@@ -161,7 +161,7 @@
                     <view key="view" contentMode="scaleToFill" id="ia1-br-NBb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="pjp-oB-5Mh"/>
                 </viewController>
@@ -172,7 +172,7 @@
         <!--Navigation Controller-->
         <scene sceneID="9rr-lO-BSX">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="o6l-Qe-UHx" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="GreenNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="o6l-Qe-UHx" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9I2-a6-88m">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -190,7 +190,7 @@
         <!--Navigation Controller-->
         <scene sceneID="B6z-VF-plV">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1e9-m9-qiN" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="BlueNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="1e9-m9-qiN" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="89R-xZ-vHS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -208,7 +208,7 @@
         <!--Navigation Controller-->
         <scene sceneID="JXE-Pg-WQI">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cGz-aW-8h9" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="PinkNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="cGz-aW-8h9" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8s4-qS-nIb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

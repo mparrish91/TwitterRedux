@@ -11,6 +11,10 @@ import UIKit
 class TFHamburgerViewController: UIViewController {
     @IBOutlet weak var menuView: UIView!
     @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var leftMarginConstraint: NSLayoutConstraint!
+
+    var originalLeftMargin:CGFloat!
+    
     
     var menuViewController: UIViewController!
     {
@@ -24,13 +28,20 @@ class TFHamburgerViewController: UIViewController {
         {
         didSet {
             view.layoutIfNeeded()
+            
+            contentViewController.willMove(toParentViewController: self)
             contentView.addSubview(contentViewController.view)
+            contentViewController.didMove(toParentViewController: self)
+
+            UIView.animate(withDuration: 0.5) {
+                self.leftMarginConstraint.constant = 0
+                self.view.layoutIfNeeded()
+            }
+            
         }
     }
     
-    var originalLeftMargin:CGFloat!
-
-    @IBOutlet weak var leftMarginConstraint: NSLayoutConstraint!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

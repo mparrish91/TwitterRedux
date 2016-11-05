@@ -21,9 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let menuViewController = storyboard.instantiateViewController(withIdentifier: "MenuViewController") as! TFMenuViewController
         
+        menuViewController.hamburgerViewController = hamburgerViewController
         hamburgerViewController.menuViewController = menuViewController
         
-        menuViewController.hamburgerViewController = hamburgerViewController
 
         
         return true

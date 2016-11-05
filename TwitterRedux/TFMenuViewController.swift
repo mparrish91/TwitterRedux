@@ -10,19 +10,28 @@ import UIKit
 
 class TFMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    
     @IBOutlet var menuTableView: UIView!
-    var viewControllers = ["Profile", "Mentions", "Timeline"]
-    
     var hamburgerViewController: TFHamburgerViewController!
+    private var greenNavigationController: UIViewController!
+    private var blueNavigationController: UIViewController!
+    private var pinkNavigationController: UIViewController!
 
+    var viewControllers: [UIViewController] = []
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+       greenNavigationController = storyboard.instantiateViewController(withIdentifier: "GreenNavigationController")
+        blueNavigationController = storyboard.instantiateViewController(withIdentifier: "BlueNavigationController")
+
+        pinkNavigationController = storyboard.instantiateViewController(withIdentifier: "PinkNavigationController")
+        
+        viewControllers.append(greenNavigationController)
+        viewControllers.append(blueNavigationController)
+        viewControllers.append(pinkNavigationController)
+
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -33,10 +42,11 @@ class TFMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as UITableViewCell
-        cell.textLabel?.text = viewControllers[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath) as UITableViewCell
         
-        hamburgerViewController.contentViewController = viewControllers[indexPath.row]
+        let titles = ["Profile", "Mentions", "Timeline"]
+        cell.textLabel?.text = titles[indexPath.row]
+
         
         
         return cell
@@ -45,6 +55,9 @@ class TFMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        hamburgerViewController.contentViewController = viewControllers[indexPath.row]
+
         
     }
 
