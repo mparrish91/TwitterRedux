@@ -31,6 +31,9 @@ class TFMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
         viewControllers.append(greenNavigationController)
         viewControllers.append(blueNavigationController)
         viewControllers.append(pinkNavigationController)
+        
+        hamburgerViewController.contentViewController = greenNavigationController
+
 
     }
     

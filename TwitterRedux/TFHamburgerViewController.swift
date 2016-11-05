@@ -26,8 +26,14 @@ class TFHamburgerViewController: UIViewController {
     
     var contentViewController: UIViewController!
         {
-        didSet {
+        didSet(oldContentViewController) {
             view.layoutIfNeeded()
+            
+            if oldContentViewController != nil{
+                oldContentViewController.willMove(toParentViewController: nil)
+                oldContentViewController.view.removeFromSuperview()
+                oldContentViewController.didMove(toParentViewController: nil)
+            }
             
             contentViewController.willMove(toParentViewController: self)
             contentView.addSubview(contentViewController.view)

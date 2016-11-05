@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -91,22 +92,75 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZuM-bw-NFb">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuCell" textLabel="tRy-KH-dEL" style="IBUITableViewCellStyleDefault" id="pCh-Fa-ZYf">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuHeaderCell" rowHeight="100" id="pCh-Fa-ZYf" customClass="TFMenuHeaderTableViewCell" customModule="TwitterRedux" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pCh-Fa-ZYf" id="t7r-E9-vdB">
-                                            <frame key="frameInset" width="375" height="43.5"/>
+                                            <frame key="frameInset" width="375" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tRy-KH-dEL">
-                                                    <frame key="frameInset" minX="15" width="345" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zky-2Q-GYN">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t63-Pu-FZG">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="biC-i4-SqJ">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="70" id="VXK-Ka-yJc"/>
+                                                        <constraint firstAttribute="width" constant="70" id="xZ9-iP-ils"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="t63-Pu-FZG" firstAttribute="bottom" secondItem="biC-i4-SqJ" secondAttribute="bottom" id="31N-4w-9R8"/>
+                                                <constraint firstItem="Zky-2Q-GYN" firstAttribute="top" secondItem="biC-i4-SqJ" secondAttribute="top" id="B2K-AY-z2X"/>
+                                                <constraint firstItem="Zky-2Q-GYN" firstAttribute="leading" secondItem="biC-i4-SqJ" secondAttribute="trailing" constant="1" id="EY0-Dz-BLa"/>
+                                                <constraint firstItem="biC-i4-SqJ" firstAttribute="centerY" secondItem="t7r-E9-vdB" secondAttribute="centerY" id="Wjc-Jd-T4J"/>
+                                                <constraint firstItem="t63-Pu-FZG" firstAttribute="leading" secondItem="biC-i4-SqJ" secondAttribute="trailing" constant="1" id="Wni-yj-ohd"/>
+                                                <constraint firstItem="biC-i4-SqJ" firstAttribute="leading" secondItem="t7r-E9-vdB" secondAttribute="leadingMargin" id="bL0-NN-nlX"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="descriptionLabel" destination="t63-Pu-FZG" id="RET-Oh-vkz"/>
+                                            <outlet property="nameLabel" destination="Zky-2Q-GYN" id="ReR-3q-bEO"/>
+                                            <outlet property="profilePhotoImageView" destination="biC-i4-SqJ" id="aS7-Kf-1xq"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuCell" rowHeight="75" id="60c-P0-oCq" customClass="TFMenuTableViewCell" customModule="TwitterRedux" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="128" width="375" height="75"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="60c-P0-oCq" id="6sV-Jp-RIz">
+                                            <frame key="frameInset" width="375" height="74"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XN9-mU-1nf">
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XJt-RV-mK3">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="15" id="UF9-JS-7NP"/>
+                                                        <constraint firstAttribute="width" constant="15" id="mcD-VJ-uTi"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="XN9-mU-1nf" firstAttribute="centerY" secondItem="6sV-Jp-RIz" secondAttribute="centerY" id="1Vh-CQ-Cfg"/>
+                                                <constraint firstItem="XJt-RV-mK3" firstAttribute="leading" secondItem="6sV-Jp-RIz" secondAttribute="leadingMargin" id="3jv-Lj-RE6"/>
+                                                <constraint firstItem="XJt-RV-mK3" firstAttribute="centerY" secondItem="6sV-Jp-RIz" secondAttribute="centerY" id="N8n-DC-OEZ"/>
+                                                <constraint firstItem="XN9-mU-1nf" firstAttribute="leading" secondItem="XJt-RV-mK3" secondAttribute="trailing" constant="2" id="SKh-lS-1u3"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="iconImageView" destination="XJt-RV-mK3" id="4UR-wU-Y26"/>
+                                            <outlet property="titleLabel" destination="XN9-mU-1nf" id="TEi-OP-Iph"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
