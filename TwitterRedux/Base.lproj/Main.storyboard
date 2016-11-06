@@ -11,7 +11,7 @@
         <!--Hamburger View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="TFHamburgerViewController" customModule="TwitterRedux" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="TRHamburgerViewController" customModule="TwitterRedux" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -62,7 +62,7 @@
         <!--Profile View Controller-->
         <scene sceneID="oh5-Ac-ZXk">
             <objects>
-                <viewController id="WgJ-b8-XTf" customClass="TFProfileViewController" customModule="TwitterRedux" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="WgJ-b8-XTf" customClass="TRProfileViewController" customModule="TwitterRedux" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="v6c-AL-5yo"/>
                         <viewControllerLayoutGuide type="bottom" id="Hq3-qb-Lj4"/>
@@ -271,12 +271,15 @@
                     </view>
                     <navigationItem key="navigationItem" id="Ukz-wO-Su8"/>
                     <connections>
-                        <outlet property="accountsButton" destination="gF6-ld-Z9e" id="7Ya-Wp-qlI"/>
-                        <outlet property="followersLabel" destination="9Lx-Me-HwJ" id="CV5-aW-20R"/>
-                        <outlet property="followingLabel" destination="AG9-OI-WEA" id="3qG-bz-Fap"/>
-                        <outlet property="settingsButton" destination="Hha-yc-0bZ" id="wp3-oF-jLy"/>
-                        <outlet property="tweetsLabel" destination="0VH-Py-hjR" id="MSp-xk-gmc"/>
-                        <outlet property="tweetsTableView" destination="cNa-KA-44x" id="59E-ki-qs2"/>
+                        <outlet property="accountsButton" destination="gF6-ld-Z9e" id="L4F-vo-qV8"/>
+                        <outlet property="followersLabel" destination="9Lx-Me-HwJ" id="FIa-9b-j6O"/>
+                        <outlet property="followingLabel" destination="AG9-OI-WEA" id="dEw-oF-x7r"/>
+                        <outlet property="headerBackgroundImageView" destination="xTB-vB-3M3" id="6ev-V0-82V"/>
+                        <outlet property="headerProfilePhotoImageView" destination="jcD-Y3-kUv" id="Oey-CI-pMu"/>
+                        <outlet property="nameLabel" destination="YfT-xW-N6M" id="fNp-Dl-qra"/>
+                        <outlet property="settingsButton" destination="Hha-yc-0bZ" id="mab-tm-1PF"/>
+                        <outlet property="tweetsLabel" destination="0VH-Py-hjR" id="fks-J5-tvT"/>
+                        <outlet property="tweetsTableView" destination="cNa-KA-44x" id="max-uL-4nK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="trY-44-LDg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -286,7 +289,7 @@
         <!--Menu View Controller-->
         <scene sceneID="47M-jy-H0b">
             <objects>
-                <viewController storyboardIdentifier="MenuViewController" id="ESB-H0-c4e" customClass="TFMenuViewController" customModule="TwitterRedux" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuViewController" id="ESB-H0-c4e" customClass="TRMenuViewController" customModule="TwitterRedux" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Vl4-Yb-KMS"/>
                         <viewControllerLayoutGuide type="bottom" id="OvD-VE-2ZN"/>
@@ -298,7 +301,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZuM-bw-NFb">
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuHeaderCell" rowHeight="100" id="pCh-Fa-ZYf" customClass="TFMenuHeaderTableViewCell" customModule="TwitterRedux" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuHeaderCell" rowHeight="100" id="pCh-Fa-ZYf" customClass="TRMenuHeaderTableViewCell" customModule="TwitterRedux" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pCh-Fa-ZYf" id="t7r-E9-vdB">
@@ -333,12 +336,12 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
-                                            <outlet property="descriptionLabel" destination="t63-Pu-FZG" id="RET-Oh-vkz"/>
-                                            <outlet property="nameLabel" destination="Zky-2Q-GYN" id="ReR-3q-bEO"/>
-                                            <outlet property="profilePhotoImageView" destination="biC-i4-SqJ" id="aS7-Kf-1xq"/>
+                                            <outlet property="descriptionLabel" destination="t63-Pu-FZG" id="eWN-md-naB"/>
+                                            <outlet property="nameLabel" destination="Zky-2Q-GYN" id="rM4-77-ige"/>
+                                            <outlet property="profilePhotoImageView" destination="biC-i4-SqJ" id="C8T-gQ-3tY"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuCell" rowHeight="75" id="60c-P0-oCq" customClass="TFMenuTableViewCell" customModule="TwitterRedux" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuCell" rowHeight="75" id="60c-P0-oCq" customClass="TRMenuTableViewCell" customModule="TwitterRedux" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="128" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="60c-P0-oCq" id="6sV-Jp-RIz">

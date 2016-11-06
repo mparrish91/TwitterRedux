@@ -8,10 +8,10 @@
 
 import UIKit
 
-class TFMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class TRMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var menuTableView: UITableView!
-    var hamburgerViewController: TFHamburgerViewController!
+    var hamburgerViewController: TRHamburgerViewController!
     private var greenNavigationController: UIViewController!
     private var blueNavigationController: UIViewController!
     private var pinkNavigationController: UIViewController!

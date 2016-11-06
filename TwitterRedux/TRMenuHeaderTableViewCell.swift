@@ -1,5 +1,5 @@
 //
-//  TFMenuHeaderTableViewCell.swift
+//  TRMenuHeaderTableViewCell.swift
 //  TwitterRedux
 //
 //  Created by parry on 11/5/16.

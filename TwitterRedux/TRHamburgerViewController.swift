@@ -1,5 +1,5 @@
 //
-//  TFHamburgerViewController.swift
+//  TRHamburgerViewController.swift
 //  TwitterRedux
 //
 //  Created by parry on 11/4/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TFHamburgerViewController: UIViewController {
+class TRHamburgerViewController: UIViewController {
     @IBOutlet weak var menuView: UIView!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var leftMarginConstraint: NSLayoutConstraint!

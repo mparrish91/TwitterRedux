@@ -19,8 +19,8 @@
 		42F4C3FB1DCD9AF200E29471 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42F4C3F91DCD9AF200E29471 /* Main.storyboard */; };
 		42F4C3FD1DCD9AF200E29471 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42F4C3FC1DCD9AF200E29471 /* Assets.xcassets */; };
 		42F4C4001DCD9AF200E29471 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42F4C3FE1DCD9AF200E29471 /* LaunchScreen.storyboard */; };
-		42F4C40C1DCD9C5B00E29471 /* TFHamburgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F4C40B1DCD9C5B00E29471 /* TFHamburgerViewController.swift */; };
-		42F4C40E1DCD9C6500E29471 /* TFMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F4C40D1DCD9C6500E29471 /* TFMenuViewController.swift */; };
+		42F4C40C1DCD9C5B00E29471 /* TRHamburgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F4C40B1DCD9C5B00E29471 /* TRHamburgerViewController.swift */; };
+		42F4C40E1DCD9C6500E29471 /* TRMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F4C40D1DCD9C6500E29471 /* TRMenuViewController.swift */; };
 		60BE1F8C95B906B1473B6AC0 /* Pods_TwitterRedux.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 324C6121926F26CB74A0059C /* Pods_TwitterRedux.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,8 +42,8 @@
 		42F4C3FC1DCD9AF200E29471 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42F4C3FF1DCD9AF200E29471 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		42F4C4011DCD9AF200E29471 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		42F4C40B1DCD9C5B00E29471 /* TFHamburgerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFHamburgerViewController.swift; sourceTree = "<group>"; };
-		42F4C40D1DCD9C6500E29471 /* TFMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFMenuViewController.swift; sourceTree = "<group>"; };
+		42F4C40B1DCD9C5B00E29471 /* TRHamburgerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRHamburgerViewController.swift; sourceTree = "<group>"; };
+		42F4C40D1DCD9C6500E29471 /* TRMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRMenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,8 +124,8 @@
 		42F4C40A1DCD9BF800E29471 /* Hamburger Menu */ = {
 			isa = PBXGroup;
 			children = (
-				42F4C40B1DCD9C5B00E29471 /* TFHamburgerViewController.swift */,
-				42F4C40D1DCD9C6500E29471 /* TFMenuViewController.swift */,
+				42F4C40B1DCD9C5B00E29471 /* TRHamburgerViewController.swift */,
+				42F4C40D1DCD9C6500E29471 /* TRMenuViewController.swift */,
 			);
 			name = "Hamburger Menu";
 			sourceTree = "<group>";
@@ -273,13 +273,13 @@
 				42F4C3F81DCD9AF200E29471 /* ViewController.swift in Sources */,
 				421E41921DCE5F0D00E86A99 /* TRMenuHeaderTableViewCell.swift in Sources */,
 				421E41981DCF129E00E86A99 /* TRTwitterNetworkingClient.swift in Sources */,
-				42F4C40C1DCD9C5B00E29471 /* TFHamburgerViewController.swift in Sources */,
+				42F4C40C1DCD9C5B00E29471 /* TRHamburgerViewController.swift in Sources */,
 				421E419A1DCF136800E86A99 /* TRUser.swift in Sources */,
 				421E41961DCF0B0C00E86A99 /* TRTweetTableViewCell.swift in Sources */,
 				421E41901DCE5EF500E86A99 /* TRMenuTableViewCell.swift in Sources */,
 				421E419C1DCF136F00E86A99 /* TRTweet.swift in Sources */,
 				42F4C3F61DCD9AF200E29471 /* AppDelegate.swift in Sources */,
-				42F4C40E1DCD9C6500E29471 /* TFMenuViewController.swift in Sources */,
+				42F4C40E1DCD9C6500E29471 /* TRMenuViewController.swift in Sources */,
 				421E41941DCEB94400E86A99 /* TRProfileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

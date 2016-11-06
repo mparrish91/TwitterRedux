@@ -1,5 +1,5 @@
 //
-//  TFTweetTableViewCell.swift
+//  TRTweetTableViewCell.swift
 //  TwitterRedux
 //
 //  Created by parry on 11/5/16.
