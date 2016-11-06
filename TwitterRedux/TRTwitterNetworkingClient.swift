@@ -34,7 +34,7 @@ private let kTwitterSMResourcePathTweet = "1.1/statuses/update.json"
 private let kTwitterSMParameterTweetKey = "status"
 private let kTwitterSMHomeTimelineParameters = ["count": "20"]
 
-let notificationLogout = Notification.Name("logoutNotification")
+let userLogout = Notification.Name("logoutNotification")
 
 class TRTwitterNetworkingClient: NSObject {
     static let sharedInstance = TRTwitterNetworkingClient()
@@ -54,7 +54,7 @@ class TRTwitterNetworkingClient: NSObject {
         sessionManager.deauthorize()
         
         
-        NotificationCenter.default.post(name: notificationLogout, object: nil)
+        NotificationCenter.default.post(name: userLogout, object: nil)
     }
     
     func login(completion onLogin: @escaping() -> (), failure: @escaping(Error?) -> ()) {

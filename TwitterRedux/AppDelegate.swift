@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                     // your code here
-                    self.animateTwitterFeed()
+                    self.animateTwitterFeedWithHamburgerMenu()
                 }
 
             }
@@ -66,7 +66,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         
         UIView.transition(with: window!, duration: 0.5, options: UIViewAnimationOptions.transitionFlipFromBottom, animations: {
-            window?.rootViewController = hamburgerViewController
+            self.window?.rootViewController = hamburgerViewController
         }) { (success: Bool) in
             //completion code
             

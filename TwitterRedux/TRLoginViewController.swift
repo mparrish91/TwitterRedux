@@ -26,9 +26,17 @@ class TRLoginViewController: UIViewController {
         // Login to Twitter
         // Start OAuth session manager & initiate token request
         TRTwitterNetworkingClient.sharedInstance.login(completion: {
-            self.present(LoginViewController.getRootVCAfterLogin(), animated: true, completion: {
-                // Completion code
+            let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+            
+            let loadingVC = storyboard.instantiateViewController(withIdentifier: "TRLoadingViewController") as! TRLoadingViewController
+            self.present(loadingVC, animated: true, completion: {
             })
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                // your code here
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDelegate.animateTwitterFeedWithHamburgerMenu()
+            }
             
         }) { (error) in
             if let error = error {
@@ -36,4 +44,5 @@ class TRLoginViewController: UIViewController {
             }
         }
     }
+
 }

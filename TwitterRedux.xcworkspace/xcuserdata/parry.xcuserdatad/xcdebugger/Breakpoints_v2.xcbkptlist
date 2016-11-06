@@ -17,38 +17,6 @@
             endingLineNumber = "114"
             landmarkName = "fetchTimeline(completion:failure:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TwitterRedux.TRTwitterNetworkingClient.fetchTimeline (completion : (Swift.Optional&lt;Swift.Array&lt;TwitterRedux.TRTweet&gt;&gt;) -&gt; (), failure : (Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "TwitterRedux"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/parry/Desktop/CodePath/TwitterRedux/TwitterRedux/TRTwitterNetworkingClient.swift"
-                  timestampString = "500148734.803305"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "114"
-                  endingLineNumber = "114"
-                  offsetFromSymbolStart = "31">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TwitterRedux.TRTwitterNetworkingClient.(fetchTimeline (completion : (Swift.Optional&lt;Swift.Array&lt;TwitterRedux.TRTweet&gt;&gt;) -&gt; (), failure : (Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()).(closure #1)"
-                  moduleName = "TwitterRedux"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/parry/Desktop/CodePath/TwitterRedux/TwitterRedux/TRTwitterNetworkingClient.swift"
-                  timestampString = "500148734.806192"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "116"
-                  endingLineNumber = "116"
-                  offsetFromSymbolStart = "35">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
