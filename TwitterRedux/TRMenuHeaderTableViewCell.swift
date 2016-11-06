@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TFMenuHeaderTableViewCell: UITableViewCell {
+class TRMenuHeaderTableViewCell: UITableViewCell {
     @IBOutlet weak var profilePhotoImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!

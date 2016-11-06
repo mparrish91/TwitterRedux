@@ -8,9 +8,8 @@
 
 import UIKit
 
-class TFMenuTableViewCell: UITableViewCell {
+class TRMenuTableViewCell: UITableViewCell {
     @IBOutlet weak var iconImageView: UIImageView!
-
     @IBOutlet weak var titleLabel: UILabel!
     
     override func awakeFromNib() {

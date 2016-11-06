@@ -49,7 +49,7 @@ class TFMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         if indexPath.row == 0
         {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "MenuHeaderCell", for: indexPath) as! TFMenuHeaderTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "MenuHeaderCell", for: indexPath) as! TRMenuHeaderTableViewCell
             
             cell.nameLabel?.text = "Gil Turner"
             cell.descriptionLabel?.text = "Co-founder at YC"
@@ -63,7 +63,7 @@ class TFMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
         else
         {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath) as! TFMenuTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath) as! TRMenuTableViewCell
         
         let titles = ["", "profile", "mentions", "feed"]
 

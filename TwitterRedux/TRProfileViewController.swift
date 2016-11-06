@@ -1,5 +1,5 @@
 //
-//  TFProfileViewController.swift
+//  TRProfileViewController.swift
 //  TwitterRedux
 //
 //  Created by parry on 11/5/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TFProfileViewController: UIViewController {
+class TRProfileViewController: UIViewController {
 
     @IBOutlet weak var tweetsTableView: UITableView!
     
