@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -59,6 +59,54 @@
             </objects>
             <point key="canvasLocation" x="38" y="-43"/>
         </scene>
+        <!--Login View Controller-->
+        <scene sceneID="hAh-H1-bdg">
+            <objects>
+                <viewController storyboardIdentifier="TRLoginViewController" id="M2R-0A-vWN" customClass="TRLoginViewController" customModule="TwitterRedux" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cPW-mf-QN9"/>
+                        <viewControllerLayoutGuide type="bottom" id="ElM-D4-FqB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JoY-fB-T0B">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfT-ea-X91">
+                                <state key="normal" title="Login to Twitter"/>
+                                <connections>
+                                    <action selector="onLoginButtonPressed:" destination="M2R-0A-vWN" eventType="touchUpInside" id="6tc-Ck-GtZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pfT-ea-X91" firstAttribute="centerX" secondItem="JoY-fB-T0B" secondAttribute="centerX" id="UhK-SW-Qpw"/>
+                            <constraint firstItem="pfT-ea-X91" firstAttribute="centerY" secondItem="JoY-fB-T0B" secondAttribute="centerY" id="i9d-tU-N5k"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JD9-BU-yVi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="38" y="-777"/>
+        </scene>
+        <!--Loading View Controller-->
+        <scene sceneID="FUZ-rb-Ecn">
+            <objects>
+                <viewController storyboardIdentifier="TRLoadingViewController" id="gqg-kH-uMp" customClass="TRLoadingViewController" customModule="TwitterRedux" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Wio-KK-qdT"/>
+                        <viewControllerLayoutGuide type="bottom" id="9Uc-y3-qGq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tWO-cy-zzB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IPT-rk-t3d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="828" y="-778"/>
+        </scene>
         <!--Profile View Controller-->
         <scene sceneID="oh5-Ac-ZXk">
             <objects>
@@ -75,10 +123,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="120" id="zd2-Qs-TVc" customClass="TFTweetTableViewCell" customModule="TwitterRedux" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="384" height="120"/>
+                                        <rect key="frame" x="0.0" y="92" width="1000" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zd2-Qs-TVc" id="Eve-CP-5yA">
-                                            <frame key="frameInset" width="384" height="119"/>
+                                            <frame key="frameInset" width="1000" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TM5-ht-TdV">
@@ -305,7 +353,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pCh-Fa-ZYf" id="t7r-E9-vdB">
-                                            <frame key="frameInset" width="375" height="99"/>
+                                            <frame key="frameInset" width="375" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zky-2Q-GYN">
@@ -345,7 +393,7 @@
                                         <rect key="frame" x="0.0" y="128" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="60c-P0-oCq" id="6sV-Jp-RIz">
-                                            <frame key="frameInset" width="375" height="74"/>
+                                            <frame key="frameInset" width="375" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XN9-mU-1nf">

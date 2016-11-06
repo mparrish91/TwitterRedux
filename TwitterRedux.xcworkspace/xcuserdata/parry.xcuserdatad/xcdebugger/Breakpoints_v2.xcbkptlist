@@ -9,70 +9,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TwitterRedux/TRProfileViewController.swift"
-            timestampString = "500112546.450025"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
-            landmarkName = "fetchTimeline()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TwitterRedux/TRProfileViewController.swift"
-            timestampString = "500112808.195978"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "fetchTimeline()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TwitterRedux.TRProfileViewController.fetchTimeline () -&gt; ()"
-                  moduleName = "TwitterRedux"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/parry/Desktop/CodePath/TwitterRedux/TwitterRedux/TRProfileViewController.swift"
-                  timestampString = "500112886.282326"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "58"
-                  endingLineNumber = "58"
-                  offsetFromSymbolStart = "12">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TwitterRedux.TRProfileViewController.(fetchTimeline () -&gt; ()).(closure #1)"
-                  moduleName = "TwitterRedux"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/parry/Desktop/CodePath/TwitterRedux/TwitterRedux/TRProfileViewController.swift"
-                  timestampString = "500112886.284905"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "59"
-                  endingLineNumber = "59"
-                  offsetFromSymbolStart = "16">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "TwitterRedux/TRTwitterNetworkingClient.swift"
             timestampString = "500112877.181312"
             startingColumnNumber = "9223372036854775807"
@@ -90,7 +26,7 @@
                   moduleName = "TwitterRedux"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/parry/Desktop/CodePath/TwitterRedux/TwitterRedux/TRTwitterNetworkingClient.swift"
-                  timestampString = "500112886.30029"
+                  timestampString = "500148734.803305"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "114"
@@ -105,7 +41,7 @@
                   moduleName = "TwitterRedux"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/parry/Desktop/CodePath/TwitterRedux/TwitterRedux/TRTwitterNetworkingClient.swift"
-                  timestampString = "500112886.302619"
+                  timestampString = "500148734.806192"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "116"

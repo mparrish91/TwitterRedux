@@ -15,18 +15,74 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        UINavigationBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().barTintColor = UIColor.lightGray
+        
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        
+        let loginVC = storyboard.instantiateViewController(withIdentifier: "TRLoginViewController") as! TRLoginViewController
+        
+        if let currentUser = TRUser.currentUser {
+            print("User already logged in: \(currentUser.name)")
+            window?.rootViewController = tweetsVC
+            
+            //timelineVC already set/ try to do the flip
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                // your code here
+                self.animateTwitterFeed()
+            }
+        }
+        else {
+            print("No current user logged in yet")
+        }
+        
+        // Add notification send user back to login screen after logout
+        NotificationCenter.default.addObserver(self, selector: #selector(handleLogout), name: userLogout, object: nil)
+        
+        
+        //setup Hamburger menu
 
-        let hamburgerViewController = window!.rootViewController as! TRHamburgerViewController
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let menuViewController = storyboard.instantiateViewController(withIdentifier: "MenuViewController") as! TRMenuViewController
-        
-        menuViewController.hamburgerViewController = hamburgerViewController
-        hamburgerViewController.menuViewController = menuViewController
+//        let hamburgerViewController = window!.rootViewController as! TRHamburgerViewController
+//        
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let menuViewController = storyboard.instantiateViewController(withIdentifier: "MenuViewController") as! TRMenuViewController
+//        
+//        menuViewController.hamburgerViewController = hamburgerViewController
+//        hamburgerViewController.menuViewController = menuViewController
         
 
         
         return true
+    }
+    
+    
+    func animateTwitterFeed()
+    {
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        
+        let tweetsVC = storyboard.instantiateViewController(withIdentifier: "TRLoadingViewController") as! TRLoadingViewController
+        
+        UIView.transition(with: window!, duration: 0.5, options: UIViewAnimationOptions.transitionFlipFromBottom, animations: {
+            self.window?.rootViewController = tweetsVC
+        }) { (success: Bool) in
+            //completion code
+            
+            
+        }
+        
+    }
+
+    
+    
+    func handleLogout() {
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let rootVC = storyboard.instantiateInitialViewController()
+        UIView.transition(with: window!, duration: 0.5, options: UIViewAnimationOptions.transitionFlipFromBottom, animations: {
+            self.window?.rootViewController = rootVC
+        }) { (success: Bool) in
+            //completion code
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -50,6 +106,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        // Complete OAuth authentication
+        TRTwitterNetworkingClient.sharedInstance.completeLogin(with: url)
+        
+        return true
+    }
+
 
 
 }
