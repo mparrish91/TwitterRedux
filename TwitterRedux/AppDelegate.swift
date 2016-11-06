@@ -18,38 +18,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UINavigationBar.appearance().tintColor = UIColor.white
         UINavigationBar.appearance().barTintColor = UIColor.lightGray
+
         
-        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-        
-        let loginVC = storyboard.instantiateViewController(withIdentifier: "TRLoginViewController") as! TRLoginViewController
-        
-        if let currentUser = TRUser.currentUser {
-            print("User already logged in: \(currentUser.name)")
-            window?.rootViewController = tweetsVC
+        if TRUser.currentUser != nil
+        {
+            //we have a current user, show them loading then tweets view
+            let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
             
-            //timelineVC already set/ try to do the flip
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                // your code here
-                self.animateTwitterFeed()
+            let loadingVC = storyboard.instantiateViewController(withIdentifier: "TRLoadingViewController") as! TRLoadingViewController
+            
+            if let currentUser = TRUser.currentUser {
+                print("User already logged in: \(currentUser.name)")
+                window?.rootViewController = loadingVC
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                    // your code here
+                    self.animateTwitterFeed()
+                }
+
             }
         }
-        else {
+        else{
             print("No current user logged in yet")
+
         }
-        
+
         // Add notification send user back to login screen after logout
         NotificationCenter.default.addObserver(self, selector: #selector(handleLogout), name: userLogout, object: nil)
         
         
-        //setup Hamburger menu
-
-//        let hamburgerViewController = window!.rootViewController as! TRHamburgerViewController
-//        
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let menuViewController = storyboard.instantiateViewController(withIdentifier: "MenuViewController") as! TRMenuViewController
-//        
-//        menuViewController.hamburgerViewController = hamburgerViewController
-//        hamburgerViewController.menuViewController = menuViewController
         
 
         
@@ -57,14 +54,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     
-    func animateTwitterFeed()
+    func animateTwitterFeedWithHamburgerMenu()
     {
-        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        //setup Hamburger menu
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let hamburgerViewController = storyboard.instantiateViewController(withIdentifier: "TRHamburgerViewController") as! TRHamburgerViewController        
+        let menuViewController = storyboard.instantiateViewController(withIdentifier: "MenuViewController") as! TRMenuViewController
         
-        let tweetsVC = storyboard.instantiateViewController(withIdentifier: "TRLoadingViewController") as! TRLoadingViewController
+        menuViewController.hamburgerViewController = hamburgerViewController
+        hamburgerViewController.menuViewController = menuViewController
+
         
         UIView.transition(with: window!, duration: 0.5, options: UIViewAnimationOptions.transitionFlipFromBottom, animations: {
-            self.window?.rootViewController = tweetsVC
+            window?.rootViewController = hamburgerViewController
         }) { (success: Bool) in
             //completion code
             
