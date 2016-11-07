@@ -23,10 +23,6 @@ class TRProfileViewController: UIViewController, UITableViewDataSource, UITableV
     
     @IBOutlet weak var followersLabel: UILabel!
     
-    @IBOutlet weak var settingsButton: UIButton!
-    
-    @IBOutlet weak var accountsButton: UIButton!
-    
     @IBOutlet weak var nameLabel: UILabel!
     
     @IBOutlet weak var accountLabel: UILabel!
@@ -38,7 +34,7 @@ class TRProfileViewController: UIViewController, UITableViewDataSource, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationController?.navigationBar.topItem?.title = "Timeline"
+        navigationController?.navigationBar.topItem?.title = "Profile"
         
         // Initialize a pull to refresh UIRefreshControl
         refreshControl.addTarget(self, action: #selector(fetchTimeline), for: UIControlEvents.valueChanged)
@@ -50,6 +46,11 @@ class TRProfileViewController: UIViewController, UITableViewDataSource, UITableV
         
         // load the model and views
         fetchTimeline()
+        
+        let user = TRUser.currentUser
+        tweetsLabel.text = user.totalTweets
+        followersLabel.text = user.totalFollowers
+        followingLabel.text = user.totalFollowing
 
     }
     
