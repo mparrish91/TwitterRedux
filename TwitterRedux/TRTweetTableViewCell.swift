@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol TRTweetCellDelegate: class {
+    func profilePhotoImageViewTapped(tweet: TRTweet)
+}
+
+
 class TRTweetTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
 
@@ -17,6 +22,10 @@ class TRTweetTableViewCell: UITableViewCell {
     @IBOutlet weak var tweetTextLabel: UILabel!
     
     @IBOutlet weak var profilePhotoImageView: UIImageView!
+    
+    weak var delegate: TRTweetCellDelegate?
+    var tweets: TRTweet?
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
