@@ -131,10 +131,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TRTweetTableViewCell" rowHeight="120" id="zd2-Qs-TVc" customClass="TRTweetTableViewCell" customModule="TwitterRedux" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="65" width="375" height="120"/>
+                                        <rect key="frame" x="0.0" y="65" width="1000" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zd2-Qs-TVc" id="Eve-CP-5yA">
-                                            <frame key="frameInset" width="375" height="119.5"/>
+                                            <frame key="frameInset" width="1000" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TM5-ht-TdV">
@@ -335,6 +335,7 @@
                         <outlet property="followingLabel" destination="AG9-OI-WEA" id="dEw-oF-x7r"/>
                         <outlet property="headerBackgroundImageView" destination="xTB-vB-3M3" id="6ev-V0-82V"/>
                         <outlet property="headerProfilePhotoImageView" destination="jcD-Y3-kUv" id="Oey-CI-pMu"/>
+                        <outlet property="headerView" destination="jdY-wn-8da" id="p7J-tf-Gmq"/>
                         <outlet property="nameLabel" destination="YfT-xW-N6M" id="fNp-Dl-qra"/>
                         <outlet property="tweetsLabel" destination="0VH-Py-hjR" id="fks-J5-tvT"/>
                         <outlet property="tweetsTableView" destination="cNa-KA-44x" id="max-uL-4nK"/>
@@ -363,7 +364,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pCh-Fa-ZYf" id="t7r-E9-vdB">
-                                            <frame key="frameInset" width="375" height="99.5"/>
+                                            <frame key="frameInset" width="375" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zky-2Q-GYN">
@@ -403,7 +404,7 @@
                                         <rect key="frame" x="0.0" y="128" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="60c-P0-oCq" id="6sV-Jp-RIz">
-                                            <frame key="frameInset" width="375" height="74.5"/>
+                                            <frame key="frameInset" width="375" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XN9-mU-1nf">
@@ -455,10 +456,10 @@
             </objects>
             <point key="canvasLocation" x="37.600000000000001" y="655.32233883058473"/>
         </scene>
-        <!--View Controller-->
+        <!--Mentions View Controller-->
         <scene sceneID="7Qh-t2-p6K">
             <objects>
-                <viewController id="l9P-Uo-9Lu" sceneMemberID="viewController">
+                <viewController id="l9P-Uo-9Lu" customClass="TRMentionsViewController" customModule="TwitterRedux" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mzy-q9-eTz"/>
                         <viewControllerLayoutGuide type="bottom" id="5ff-FD-c8P"/>
@@ -466,18 +467,42 @@
                     <view key="view" contentMode="scaleToFill" id="Y2x-sQ-2h7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KaH-NZ-GDw">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TRTweetTableViewCell" id="Hol-ty-oxF" customClass="TRTweetTableViewCell" customModule="TwitterRedux" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hol-ty-oxF" id="voP-rE-Gvd">
+                                            <frame key="frameInset" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="l9P-Uo-9Lu" id="snY-Jn-oAa"/>
+                                    <outlet property="delegate" destination="l9P-Uo-9Lu" id="dXG-gQ-5HX"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="KaH-NZ-GDw" firstAttribute="top" secondItem="Y2x-sQ-2h7" secondAttribute="top" id="4h1-4p-SnB"/>
+                            <constraint firstAttribute="trailing" secondItem="KaH-NZ-GDw" secondAttribute="trailing" id="6LG-uE-21H"/>
+                            <constraint firstItem="5ff-FD-c8P" firstAttribute="top" secondItem="KaH-NZ-GDw" secondAttribute="bottom" id="BE8-7q-k7Y"/>
+                            <constraint firstItem="KaH-NZ-GDw" firstAttribute="leading" secondItem="Y2x-sQ-2h7" secondAttribute="leading" id="a92-jX-3km"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="IS2-ae-7zj"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w11-UH-5A3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2" y="2068"/>
+            <point key="canvasLocation" x="-2.3999999999999999" y="2067.6161919040483"/>
         </scene>
-        <!--View Controller-->
+        <!--Timeline View Controller-->
         <scene sceneID="yKq-Zt-rK3">
             <objects>
-                <viewController id="Mel-4J-vgU" sceneMemberID="viewController">
+                <viewController id="Mel-4J-vgU" customClass="TRTimelineViewController" customModule="TwitterRedux" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vP0-Bg-Kst"/>
                         <viewControllerLayoutGuide type="bottom" id="QQQ-FA-dW0"/>
@@ -485,18 +510,42 @@
                     <view key="view" contentMode="scaleToFill" id="ia1-br-NBb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="agB-xe-FE9">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TRTweetTableViewCell" id="1Ii-PJ-1Oo" customClass="TRTweetTableViewCell" customModule="TwitterRedux" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Ii-PJ-1Oo" id="uGh-8K-kHU">
+                                            <frame key="frameInset" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Mel-4J-vgU" id="F60-UM-MAb"/>
+                                    <outlet property="delegate" destination="Mel-4J-vgU" id="4Ab-qu-cyC"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="agB-xe-FE9" secondAttribute="trailing" id="0yc-oF-b0z"/>
+                            <constraint firstItem="QQQ-FA-dW0" firstAttribute="top" secondItem="agB-xe-FE9" secondAttribute="bottom" id="4ni-d2-9uc"/>
+                            <constraint firstItem="agB-xe-FE9" firstAttribute="top" secondItem="ia1-br-NBb" secondAttribute="top" id="H3n-R5-ZQS"/>
+                            <constraint firstItem="agB-xe-FE9" firstAttribute="leading" secondItem="ia1-br-NBb" secondAttribute="leading" id="wrR-e4-oRz"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="pjp-oB-5Mh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NgO-Q2-xuA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="828" y="2068"/>
+            <point key="canvasLocation" x="828" y="2067.6161919040483"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9rr-lO-BSX">
             <objects>
-                <navigationController storyboardIdentifier="GreenNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="o6l-Qe-UHx" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ProfileNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="o6l-Qe-UHx" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9I2-a6-88m">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -514,7 +563,7 @@
         <!--Navigation Controller-->
         <scene sceneID="B6z-VF-plV">
             <objects>
-                <navigationController storyboardIdentifier="BlueNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="1e9-m9-qiN" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MentionsNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="1e9-m9-qiN" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="89R-xZ-vHS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -532,7 +581,7 @@
         <!--Navigation Controller-->
         <scene sceneID="JXE-Pg-WQI">
             <objects>
-                <navigationController storyboardIdentifier="PinkNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="cGz-aW-8h9" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="TimelineNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="cGz-aW-8h9" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8s4-qS-nIb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

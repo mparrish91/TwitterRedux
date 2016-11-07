@@ -12,9 +12,9 @@ class TRMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBOutlet var menuTableView: UITableView!
     var hamburgerViewController: TRHamburgerViewController!
-    private var greenNavigationController: UIViewController!
-    private var blueNavigationController: UIViewController!
-    private var pinkNavigationController: UIViewController!
+    private var timelineNavigationController: UIViewController!
+    private var mentionsNavigationController: UIViewController!
+    private var profileNavigationController: UIViewController!
 
     var viewControllers: [UIViewController] = []
     
@@ -23,16 +23,16 @@ class TRMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-       greenNavigationController = storyboard.instantiateViewController(withIdentifier: "GreenNavigationController")
-        blueNavigationController = storyboard.instantiateViewController(withIdentifier: "BlueNavigationController")
+       mentionsNavigationController = storyboard.instantiateViewController(withIdentifier: "MentionsNavigationController")
+        profileNavigationController = storyboard.instantiateViewController(withIdentifier: "ProfileNavigationController")
 
-        pinkNavigationController = storyboard.instantiateViewController(withIdentifier: "PinkNavigationController")
+        timelineNavigationController = storyboard.instantiateViewController(withIdentifier: "TimelineNavigationController")
         
-        viewControllers.append(greenNavigationController)
-        viewControllers.append(blueNavigationController)
-        viewControllers.append(pinkNavigationController)
+        viewControllers.append(timelineNavigationController)
+        viewControllers.append(profileNavigationController)
+        viewControllers.append(timelineNavigationController)
         
-        hamburgerViewController.contentViewController = greenNavigationController
+        hamburgerViewController.contentViewController = timelineNavigationController
 
         
         menuTableView.tableFooterView = UIView()

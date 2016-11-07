@@ -1,78 +1,51 @@
 //
-//  TRProfileViewController.swift
+//  TRMentionsViewController.swift
 //  TwitterRedux
 //
 //  Created by parry on 11/5/16.
 //  Copyright © 2016 parry. All rights reserved.
-//
 
 import UIKit
+import AFNetworking
 
-let kTweetsTableViewCellIdentifier = "TRTweetTableViewCell"
+let kTweetsComposeNavigationControllerName = "TweetNavigationController"
+let notificationNewTweet = Notification.Name("newTweet")
+let notificationUserInfoTweetKey = "tweet"
 
-class TRProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    @IBOutlet weak var tweetsTableView: UITableView!
-    
-    @IBOutlet weak var headerBackgroundImageView: UIImageView!
-    
-    @IBOutlet weak var headerProfilePhotoImageView: UIImageView!
-    
-    @IBOutlet weak var tweetsLabel: UILabel!
-    @IBOutlet weak var followingLabel: UILabel!
-    
-    @IBOutlet weak var followersLabel: UILabel!
-    
-    @IBOutlet weak var nameLabel: UILabel!
-    
-    @IBOutlet weak var accountLabel: UILabel!
+class TRMentionsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var tweets: [TRTweet] = []
+    var currentSelectedIndex = -1
     let refreshControl = UIRefreshControl()
-
-    @IBOutlet weak var headerView: UIView!
+    
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        navigationController?.navigationBar.topItem?.title = "Timeline"
         
         // Initialize a pull to refresh UIRefreshControl
         refreshControl.addTarget(self, action: #selector(fetchTimeline), for: UIControlEvents.valueChanged)
         // add refresh control to table view
-        tweetsTableView.insertSubview(refreshControl, at: 0)
-
-        tweetsTableView.estimatedRowHeight = 100
-        tweetsTableView.rowHeight = UITableViewAutomaticDimension
+        tableView.insertSubview(refreshControl, at: 0)
+        
+        // Do any additional setup after loading the view.
+        tableView.estimatedRowHeight = 50
+        tableView.rowHeight = UITableViewAutomaticDimension
         
         // load the model and views
         fetchTimeline()
         
-        headerProfilePhotoImageView.layer.cornerRadius = 15
-        headerProfilePhotoImageView.layer.masksToBounds = true
-
-        
-        if let user = TRUser.currentUser {
-        tweetsLabel.text = String(user.totalTweets)
-        followersLabel.text = String(user.totalFollowers)
-        followingLabel.text = String(user.totalFollowing)
-        nameLabel.text = user.name
-        accountLabel.text = "@" + user.screenname!
-        headerProfilePhotoImageView.setImageWith(user.profileURL!)
-        headerBackgroundImageView.setImageWith(user.profileBackgroundURL!)
-        navigationController?.navigationBar.topItem?.title = user.name
-
-        }
-        
-//        headerView.isHidden = true
-        
     }
     
-    
+    //MARK- Model
     func fetchTimeline () {
         TRTwitterNetworkingClient.sharedInstance.fetchTimeline(completion: { (response) in
             if let response = response {
                 self.tweets = response
-                self.tweetsTableView.reloadData()
+                self.tableView.reloadData()
                 self.refreshControl.endRefreshing()
             }
         }) { (error) in
@@ -81,7 +54,7 @@ class TRProfileViewController: UIViewController, UITableViewDataSource, UITableV
             }
         }
     }
-
+    
 
     // MARK: - tableView methods
     
@@ -98,7 +71,7 @@ class TRProfileViewController: UIViewController, UITableViewDataSource, UITableV
         
         // Configure user contents
         if let user = tweet.user {
-            cell.nameLabel.text = user.name
+            cell.accountLabel.text = user.name
             cell.accountLabel.text = "@" + user.screenname!
             if let url = user.profileURL {
                 cell.profilePhotoImageView.setImageWith(url)
@@ -121,17 +94,19 @@ class TRProfileViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        currentSelectedIndex = indexPath.row
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-////        let view = headerView
-////        let view = UIView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
-////        view.backgroundColor = UIColor.yellow
-//        
-//        return view
+
+//    // MARK: Actions
+//    @IBAction func logoutButtonTapped(_ sender: UIBarButtonItem) {
+//        TwitterSessionManager.sharedInstance.logout()
 //    }
-
-
+//    
+//    @IBAction func composeButtonTapped(_ sender: UIBarButtonItem) {
+//        TweetComposeViewController.present(from: self)
+//    }
+//    
 
 }
