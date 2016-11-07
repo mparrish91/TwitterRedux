@@ -22,6 +22,9 @@ private let kTwitterSMAccessTokenPath = "oauth/access_token"
 
 private let kTwitterSMResourcePathVerifyCredential = "1.1/account/verify_credentials.json"
 private let kTwitterSMResourcePathStatusHomeTimeline = "1.1/statuses/home_timeline.json"
+private let kTwitterSMResourcePathStatusUserTimeline = "1.1/statuses/user_timeline.json"
+private let kTwitterSMResourcePathStatusMentionTimeline = "1.1/statuses/mentions_timeline.json"
+
 private let kTwitterSMResourcePathRetweet = "1.1/statuses/retweet/:id.json"
 private let kTwitterSMResourcePathRetweetIDPlaceholder = ":id"
 private let kTwitterSMResourcePathUnRetweet = "1.1/statuses/unretweet/:id.json"
@@ -33,6 +36,7 @@ private let kTwitterSMParameterReplyToIDKey = "in_reply_to_status_id"
 private let kTwitterSMResourcePathTweet = "1.1/statuses/update.json"
 private let kTwitterSMParameterTweetKey = "status"
 private let kTwitterSMHomeTimelineParameters = ["count": "20"]
+private var kTwitterSMHUserimelineParameters = ["exclude_replies": "true", "count": "20"]
 
 let userLogout = Notification.Name("logoutNotification")
 
@@ -112,6 +116,55 @@ class TRTwitterNetworkingClient: NSObject {
     
     func fetchTimeline(completion: @escaping([TRTweet]?) -> (), failure: @escaping(Error?) -> ()) {
         sessionManager.get(kTwitterSMResourcePathStatusHomeTimeline, parameters: kTwitterSMHomeTimelineParameters, progress: nil, success: { (task: URLSessionDataTask, response: Any?) in
+            // completion code
+            print("Timeline retrieved")
+            
+            if let response = response as? NSArray {
+                // Construct array of tweets
+                var tweets = [TRTweet]()
+                print("Fetched \(response.count) tweets in timeline")
+                for aResponse in response {
+                    let tweet = TRTweet(dictionary: aResponse as! NSDictionary)
+                    tweets.append(tweet)
+                }
+                
+                completion(tweets)
+            }
+            
+            
+            }, failure: { (task: URLSessionDataTask?, error: Error) in
+                //error code
+                failure(error)
+        })
+    }
+    
+    func fetchUserTimeline(completion: @escaping([TRTweet]?) -> (), failure: @escaping(Error?) -> ()) {
+        kTwitterSMHUserimelineParameters["user_id"] = "poop"
+        sessionManager.get(kTwitterSMResourcePathStatusUserTimeline, parameters: kTwitterSMHUserimelineParameters, progress: nil, success: { (task: URLSessionDataTask, response: Any?) in
+            // completion code
+            print("Timeline retrieved")
+            
+            if let response = response as? NSArray {
+                // Construct array of tweets
+                var tweets = [TRTweet]()
+                print("Fetched \(response.count) tweets in timeline")
+                for aResponse in response {
+                    let tweet = TRTweet(dictionary: aResponse as! NSDictionary)
+                    tweets.append(tweet)
+                }
+                
+                completion(tweets)
+            }
+            
+            
+            }, failure: { (task: URLSessionDataTask?, error: Error) in
+                //error code
+                failure(error)
+        })
+    }
+    
+    func fetchMentions(completion: @escaping([TRTweet]?) -> (), failure: @escaping(Error?) -> ()) {
+        sessionManager.get(kTwitterSMResourcePathStatusMentionTimeline, parameters: kTwitterSMHomeTimelineParameters, progress: nil, success: { (task: URLSessionDataTask, response: Any?) in
             // completion code
             print("Timeline retrieved")
             
