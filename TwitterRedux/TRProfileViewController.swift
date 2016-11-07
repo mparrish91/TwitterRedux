@@ -96,6 +96,7 @@ class TRProfileViewController: UIViewController, UITableViewDataSource, UITableV
         // Configure user contents
         if let user = tweet.user {
             cell.nameLabel.text = user.name
+            cell.accountLabel.text = "@" + user.screenname!
             if let url = user.profileURL {
                 cell.profilePhotoImageView.setImageWith(url)
             }
