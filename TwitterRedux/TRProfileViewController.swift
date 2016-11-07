@@ -47,11 +47,16 @@ class TRProfileViewController: UIViewController, UITableViewDataSource, UITableV
         // load the model and views
         fetchTimeline()
         
-        let user = TRUser.currentUser
-        tweetsLabel.text = user.totalTweets
-        followersLabel.text = user.totalFollowers
-        followingLabel.text = user.totalFollowing
+        if let user = TRUser.currentUser {
+        tweetsLabel.text = String(user.totalTweets)
+        followersLabel.text = String(user.totalFollowers)
+        followingLabel.text = String(user.totalFollowing)
+        nameLabel.text = user.name
+        accountLabel.text = "@" + user.screenname!
+        headerProfilePhotoImageView.setImageWith(user.profileURL!)
 
+        }
+        
     }
     
     

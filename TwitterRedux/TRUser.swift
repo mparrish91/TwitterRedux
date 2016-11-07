@@ -23,9 +23,9 @@ class TRUser: NSObject {
     var screenname: String?
     var profileURL: URL?
     var userDescription: String?
-    var totalTweets: String?
-    var totalFollowers: String?
-    var totalFollowing: String?
+    var totalTweets: Int = -1
+    var totalFollowers:Int = -1
+    var totalFollowing:Int = -1
     var userDictionary: NSDictionary
     
     init(with dictionary: NSDictionary) {
@@ -41,9 +41,9 @@ class TRUser: NSObject {
         
         userDescription = dictionary[kUserDescriptionKey] as? String
         
-        totalTweets = dictionary[kUserTotalTweets] as? String
-        totalFollowers = dictionary[kUserFollowersKey] as? String
-        totalFollowing = dictionary[kUserFollowing] as? String
+        totalTweets = (dictionary[kUserTotalTweets] as? Int)!
+        totalFollowers = (dictionary[kUserFollowersKey] as? Int)!
+        totalFollowing = (dictionary[kUserFollowing] as? Int)!
 
     }
     
