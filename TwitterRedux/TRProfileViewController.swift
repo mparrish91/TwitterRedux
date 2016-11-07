@@ -46,6 +46,10 @@ class TRProfileViewController: UIViewController, UITableViewDataSource, UITableV
         // load the model and views
         fetchTimeline()
         
+        headerProfilePhotoImageView.layer.cornerRadius = 15
+        headerProfilePhotoImageView.layer.masksToBounds = true
+
+        
         if let user = TRUser.currentUser {
         tweetsLabel.text = String(user.totalTweets)
         followersLabel.text = String(user.totalFollowers)
