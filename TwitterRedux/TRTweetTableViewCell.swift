@@ -20,7 +20,14 @@ class TRTweetTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(TRTweetTableViewCell.tapEdit(_:)))
+        profilePhotoImageView.addGestureRecognizer(tapGesture)
+        //tapGesture.delegate = ViewController()
+    }
+    
+    func tapEdit(sender: UITapGestureRecognizer) {
+//        delegate?.myTableDelegate()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
