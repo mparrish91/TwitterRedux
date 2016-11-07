@@ -11,6 +11,7 @@ import UIKit
 let kUserNameKey = "name"
 let kUserScreennameKey = "screen_name"
 let kUserProfileImageURLKey = "profile_image_url_https"
+let kUserProfileBackgroundImageURLKey = "profile_background_image_url_https"
 let kUserDescriptionKey = "description"
 let kUserDefaultsCurrentUserDataKey = "SimpleTwitterCurrentUserData"
 let kUserFollowersKey = "followers_count"
@@ -18,10 +19,13 @@ let kUserFollowing = "friends_count"
 let kUserTotalTweets = "statuses_count"
 
 
+
+
 class TRUser: NSObject {
     var name: String?
     var screenname: String?
     var profileURL: URL?
+    var profileBackgroundURL: URL?
     var userDescription: String?
     var totalTweets: Int = -1
     var totalFollowers:Int = -1
@@ -37,6 +41,10 @@ class TRUser: NSObject {
         
         if let profileURLString = dictionary[kUserProfileImageURLKey] as? String {
             profileURL = URL(string: profileURLString)
+        }
+        
+        if let profileBackgroundURLString = dictionary[kUserProfileBackgroundImageURLKey] as? String {
+            profileBackgroundURL = URL(string: profileBackgroundURLString)
         }
         
         userDescription = dictionary[kUserDescriptionKey] as? String

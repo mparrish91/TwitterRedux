@@ -41,7 +41,7 @@ class TRProfileViewController: UIViewController, UITableViewDataSource, UITableV
         // add refresh control to table view
         tweetsTableView.insertSubview(refreshControl, at: 0)
 
-        tweetsTableView.estimatedRowHeight = 50
+        tweetsTableView.estimatedRowHeight = 100
         tweetsTableView.rowHeight = UITableViewAutomaticDimension
         
         // load the model and views
@@ -54,6 +54,7 @@ class TRProfileViewController: UIViewController, UITableViewDataSource, UITableV
         nameLabel.text = user.name
         accountLabel.text = "@" + user.screenname!
         headerProfilePhotoImageView.setImageWith(user.profileURL!)
+        headerBackgroundImageView.setImageWith(user.profileBackgroundURL!)
 
         }
         
