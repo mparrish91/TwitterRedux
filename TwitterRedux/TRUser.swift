@@ -11,7 +11,7 @@ import UIKit
 let kUserNameKey = "name"
 let kUserScreennameKey = "screen_name"
 let kUserProfileImageURLKey = "profile_image_url_https"
-let kUserProfileBackgroundImageURLKey = "profile_background_image_url_https"
+let kUserProfileBackgroundImageURLKey = "profile_banner_url"
 let kUserDescriptionKey = "description"
 let kUserDefaultsCurrentUserDataKey = "SimpleTwitterCurrentUserData"
 let kUserFollowersKey = "followers_count"

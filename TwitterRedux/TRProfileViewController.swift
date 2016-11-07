@@ -34,7 +34,6 @@ class TRProfileViewController: UIViewController, UITableViewDataSource, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationController?.navigationBar.topItem?.title = "Profile"
         
         // Initialize a pull to refresh UIRefreshControl
         refreshControl.addTarget(self, action: #selector(fetchTimeline), for: UIControlEvents.valueChanged)
@@ -55,6 +54,7 @@ class TRProfileViewController: UIViewController, UITableViewDataSource, UITableV
         accountLabel.text = "@" + user.screenname!
         headerProfilePhotoImageView.setImageWith(user.profileURL!)
         headerBackgroundImageView.setImageWith(user.profileBackgroundURL!)
+        navigationController?.navigationBar.topItem?.title = user.name
 
         }
         
