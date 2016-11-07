@@ -8,7 +8,7 @@
 
 import UIKit
 
-let kTweetsTableViewCellIdentifier = "TweetTableViewCell"
+let kTweetsTableViewCellIdentifier = "TRTweetTableViewCell"
 
 class TRProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
