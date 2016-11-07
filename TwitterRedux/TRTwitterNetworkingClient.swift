@@ -17,7 +17,7 @@ private let kTwitterSMRequestMethodPost = "POST"
 private let kTwitterSMTwitterURLAddress = "https://api.twitter.com/"
 private let kTwitterSMRequestTokenURLPath = "oauth/request_token"
 private let kTwitterSMAuthorizeURLAddress = "https://api.twitter.com/oauth/authorize?oauth_token="
-private let kTwitterSMCallbackURLAddress = "SimpleTwitter://oauth"
+private let kTwitterSMCallbackURLAddress = "TwitterRedux://oauth"
 private let kTwitterSMAccessTokenPath = "oauth/access_token"
 
 private let kTwitterSMResourcePathVerifyCredential = "1.1/account/verify_credentials.json"

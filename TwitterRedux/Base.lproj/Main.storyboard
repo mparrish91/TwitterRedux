@@ -77,11 +77,19 @@
                                     <action selector="onLoginButtonPressed:" destination="M2R-0A-vWN" eventType="touchUpInside" id="6tc-Ck-GtZ"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Twitter_Logo_Blue" translatesAutoresizingMaskIntoConstraints="NO" id="8Hl-2H-qRm">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Big-sA-Fl3"/>
+                                    <constraint firstAttribute="height" constant="200" id="bE4-3m-B47"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="8Hl-2H-qRm" firstAttribute="centerY" secondItem="JoY-fB-T0B" secondAttribute="centerY" id="8ax-WR-kPI"/>
                             <constraint firstItem="pfT-ea-X91" firstAttribute="centerX" secondItem="JoY-fB-T0B" secondAttribute="centerX" id="UhK-SW-Qpw"/>
-                            <constraint firstItem="pfT-ea-X91" firstAttribute="centerY" secondItem="JoY-fB-T0B" secondAttribute="centerY" id="i9d-tU-N5k"/>
+                            <constraint firstItem="8Hl-2H-qRm" firstAttribute="centerX" secondItem="JoY-fB-T0B" secondAttribute="centerX" id="ZiV-HG-tOX"/>
+                            <constraint firstItem="pfT-ea-X91" firstAttribute="top" secondItem="8Hl-2H-qRm" secondAttribute="bottom" constant="83" id="xPF-SV-cHy"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -539,6 +547,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Twitter_Logo_Blue" width="20" height="16"/>
         <image name="accounts" width="30" height="16"/>
         <image name="settings" width="30" height="25"/>
     </resources>

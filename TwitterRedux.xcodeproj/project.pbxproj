@@ -32,6 +32,7 @@
 		324C6121926F26CB74A0059C /* Pods_TwitterRedux.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwitterRedux.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		420079C01DCFA2A3001EC772 /* TRLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRLoginViewController.swift; sourceTree = "<group>"; };
 		420079C21DCFA2B1001EC772 /* TRLoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRLoadingViewController.swift; sourceTree = "<group>"; };
+		420079C41DD01DD7001EC772 /* TwitterRedux.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TwitterRedux.entitlements; sourceTree = "<group>"; };
 		421E418F1DCE5EF500E86A99 /* TRMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRMenuTableViewCell.swift; sourceTree = "<group>"; };
 		421E41911DCE5F0D00E86A99 /* TRMenuHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRMenuHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		421E41931DCEB94400E86A99 /* TRProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRProfileViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +84,7 @@
 		42F4C3F41DCD9AF200E29471 /* TwitterRedux */ = {
 			isa = PBXGroup;
 			children = (
+				420079C41DD01DD7001EC772 /* TwitterRedux.entitlements */,
 				42F4C4091DCD9B1900E29471 /* ViewControllers */,
 				42F4C4081DCD9B0B00E29471 /* Views */,
 				42F4C4071DCD9AFD00E29471 /* Models */,
@@ -188,7 +190,13 @@
 				TargetAttributes = {
 					42F4C3F11DCD9AF200E29471 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = QF43K5VRQT;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -412,6 +420,8 @@
 			baseConfigurationReference = 1DF8418AE91DF50D2A50C757 /* Pods-TwitterRedux.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TwitterRedux/TwitterRedux.entitlements;
+				DEVELOPMENT_TEAM = QF43K5VRQT;
 				INFOPLIST_FILE = TwitterRedux/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = CodePath.TwitterRedux;
@@ -425,6 +435,8 @@
 			baseConfigurationReference = 2514FBB54559EBD7063D5A9E /* Pods-TwitterRedux.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TwitterRedux/TwitterRedux.entitlements;
+				DEVELOPMENT_TEAM = QF43K5VRQT;
 				INFOPLIST_FILE = TwitterRedux/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = CodePath.TwitterRedux;

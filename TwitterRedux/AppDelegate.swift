@@ -29,8 +29,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             if let currentUser = TRUser.currentUser {
                 print("User already logged in: \(currentUser.name)")
+                window = UIWindow(frame: UIScreen.main.bounds)
                 window?.rootViewController = loadingVC
-                
+                window?.makeKeyAndVisible()
+
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                     // your code here
                     self.animateTwitterFeedWithHamburgerMenu()
@@ -40,6 +42,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         else{
             print("No current user logged in yet")
+            
+            let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+            
+            let loginVC = storyboard.instantiateViewController(withIdentifier: "TRLoginViewController") as! TRLoginViewController
+            
+            window = UIWindow(frame: UIScreen.main.bounds)
+            window?.rootViewController = loginVC
+            window?.makeKeyAndVisible()
 
         }
 
