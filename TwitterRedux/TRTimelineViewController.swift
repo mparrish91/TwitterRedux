@@ -101,7 +101,7 @@ class TRTimelineViewController: UIViewController, UITableViewDataSource, UITable
     func profilePhotoImageViewTapped(tweet: TRTweet) {
         
         let username = tweet.user?.screenname
-        var profileVC = TRProfileViewController.instantiateCustom(username: username!)
+        let profileVC = TRProfileViewController.instantiateCustom(username: username!)
         self.navigationController?.pushViewController(profileVC, animated: true)
 
     }

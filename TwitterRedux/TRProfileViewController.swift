@@ -102,12 +102,6 @@ class TRProfileViewController: UIViewController, UITableViewDataSource, UITableV
         navigationController?.navigationBar.topItem?.title = user.name
         }
         
-//        headerView.isHidden = true
-        
-        self.tweetsTableView.register(
-            UINib(nibName: "TRProfileHeaderView", bundle:nil),
-            forCellReuseIdentifier: "xibheader")
-        
     }
     
     
@@ -167,41 +161,33 @@ class TRProfileViewController: UIViewController, UITableViewDataSource, UITableV
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-     func tableView(_ tableView: UITableView,
-                            viewForHeaderInSection section: Int) -> UIView?
-    {
-        
-        let view = TRProfileHeaderView.instanceFromNib() as! TRProfileHeaderView
-        if let user = TRUser.currentUser {
-            view.tweetsLabel.text = String(user.totalTweets)
-            view.followersLabel.text = String(user.totalFollowers)
-            view.followingLabel.text = String(user.totalFollowing)
-            view.nameLabel.text = user.name
-            view.accountLabel.text = "@" + user.screenname!
-            view.headerProfilePhotoImageView.setImageWith(user.profileURL!)
-            view.headerBackgroundImageView.setImageWith(user.profileBackgroundURL!)
-            navigationController?.navigationBar.topItem?.title = user.name
-        }
-
-        return view
-        
-
-    }
-    
-    
-     func tableView(tableView: UITableView,
-                            heightForHeaderInSection section: Int) -> CGFloat {
-        return 80
-    }
-    
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-////        let view = headerView
-////        let view = UIView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
-////        view.backgroundColor = UIColor.yellow
+//     func tableView(_ tableView: UITableView,
+//                            viewForHeaderInSection section: Int) -> UIView?
+//    {
 //        
+//        let view = TRProfileHeaderView.instanceFromNib() as! TRProfileHeaderView
+//        if let user = TRUser.currentUser {
+//            view.tweetsLabel.text = String(user.totalTweets)
+//            view.followersLabel.text = String(user.totalFollowers)
+//            view.followingLabel.text = String(user.totalFollowing)
+//            view.nameLabel.text = user.name
+//            view.accountLabel.text = "@" + user.screenname!
+//            view.headerProfilePhotoImageView.setImageWith(user.profileURL!)
+//            view.headerBackgroundImageView.setImageWith(user.profileBackgroundURL!)
+//            navigationController?.navigationBar.topItem?.title = user.name
+//        }
+//
 //        return view
+//        
+//
 //    }
-
+    
+    
+//     func tableView(_ tableView: UITableView,
+//                            heightForHeaderInSection section: Int) -> CGFloat {
+//        return 80
+//    }
+    
 
 
 }
