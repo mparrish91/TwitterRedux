@@ -30,8 +30,7 @@ class TRTweetTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(TRTweetTableViewCell.tapEdit(sender:)))
-        profilePhotoImageView.addGestureRecognizer(tapGesture)
+    
         //tapGesture.delegate = ViewController()
     }
     
@@ -43,6 +42,11 @@ class TRTweetTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    override func layoutSubviews() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(TRTweetTableViewCell.tapEdit(sender:)))
+        profilePhotoImageView.addGestureRecognizer(tapGesture)
     }
 
 }
