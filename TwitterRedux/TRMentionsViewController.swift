@@ -71,7 +71,7 @@ class TRMentionsViewController: UIViewController, UITableViewDataSource, UITable
         
         // Configure user contents
         if let user = tweet.user {
-            cell.accountLabel.text = user.name
+            cell.nameLabel.text = user.name
             cell.accountLabel.text = "@" + user.screenname!
             if let url = user.profileURL {
                 cell.profilePhotoImageView.setImageWith(url)

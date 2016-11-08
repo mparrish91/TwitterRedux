@@ -28,10 +28,10 @@ class TRMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
         timelineNavigationController = storyboard.instantiateViewController(withIdentifier: "TimelineNavigationController")
         
-        viewControllers.append(timelineNavigationController)
         viewControllers.append(profileNavigationController)
+        viewControllers.append(mentionsNavigationController)
         viewControllers.append(timelineNavigationController)
-        
+
         hamburgerViewController.contentViewController = timelineNavigationController
 
         
