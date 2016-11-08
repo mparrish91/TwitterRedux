@@ -15,6 +15,7 @@ class TRMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
     private var timelineNavigationController: UIViewController!
     private var mentionsNavigationController: UIViewController!
     private var profileNavigationController: UIViewController!
+    private var user: TRUser!
 
     var viewControllers: [UIViewController] = []
     
@@ -38,7 +39,9 @@ class TRMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
         menuTableView.tableFooterView = UIView()
 
     }
-    
+
+
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return 4
@@ -55,6 +58,16 @@ class TRMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
             cell.descriptionLabel?.text = "Co-founder at YC"
             
             cell.profilePhotoImageView.image = UIImage(named: "profile")
+            
+            
+            if let user = TRUser.currentUser
+            {
+                cell.nameLabel.text = user.name
+                cell.descriptionLabel?.text = user.description
+                if let url = user.profileURL {
+                    cell.profilePhotoImageView.setImageWith(url)
+                }
+            }
             
             
             return cell
