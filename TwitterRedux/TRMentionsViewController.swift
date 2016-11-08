@@ -24,7 +24,7 @@ class TRMentionsViewController: UIViewController, UITableViewDataSource, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.navigationBar.topItem?.title = "Timeline"
+        navigationController?.navigationBar.topItem?.title = "Mentions"
         
         // Initialize a pull to refresh UIRefreshControl
         refreshControl.addTarget(self, action: #selector(fetchTimeline), for: UIControlEvents.valueChanged)
@@ -42,7 +42,7 @@ class TRMentionsViewController: UIViewController, UITableViewDataSource, UITable
     
     //MARK- Model
     func fetchTimeline () {
-        TRTwitterNetworkingClient.sharedInstance.fetchTimeline(completion: { (response) in
+        TRTwitterNetworkingClient.sharedInstance.fetchMentions(completion: { (response) in
             if let response = response {
                 self.tweets = response
                 self.tableView.reloadData()
