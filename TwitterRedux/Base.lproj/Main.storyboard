@@ -537,6 +537,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="pjp-oB-5Mh"/>
+                    <connections>
+                        <outlet property="tweetsTableView" destination="agB-xe-FE9" id="Ftb-ts-hdq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NgO-Q2-xuA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -598,6 +601,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Twitter_Logo_Blue" width="20" height="16"/>
+        <image name="Twitter_Logo_Blue" width="99" height="60"/>
     </resources>
 </document>

@@ -9,13 +9,23 @@
 import UIKit
 
 class TRProfileHeaderView: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    
+    class func instanceFromNib() -> UIView {
+        return UINib(nibName: "TRProfileHeaderView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! UIView
     }
-    */
+    
+    @IBOutlet weak var headerBackgroundImageView: UIImageView!
+    
+    @IBOutlet weak var headerProfilePhotoImageView: UIImageView!
+    
+    @IBOutlet weak var tweetsLabel: UILabel!
+    @IBOutlet weak var followingLabel: UILabel!
+    
+    @IBOutlet weak var followersLabel: UILabel!
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBOutlet weak var accountLabel: UILabel!
+
 
 }

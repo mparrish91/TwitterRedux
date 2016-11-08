@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="09v-3c-StQ">
+        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="09v-3c-StQ" customClass="TRProfileHeaderView" customModule="TwitterRedux" customModuleProvider="target">
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5EW-TL-Qtl">
                     <constraints>
@@ -130,6 +130,15 @@
                 <constraint firstItem="gQc-XL-wdt" firstAttribute="leading" secondItem="09v-3c-StQ" secondAttribute="leading" id="z7y-Jg-uuz"/>
                 <constraint firstItem="AbQ-iL-iPB" firstAttribute="leading" secondItem="09v-3c-StQ" secondAttribute="leading" id="zCP-iK-CFF"/>
             </constraints>
+            <connections>
+                <outlet property="accountLabel" destination="bgx-xB-iqN" id="zdE-bb-ppt"/>
+                <outlet property="followersLabel" destination="7es-p6-njV" id="2ch-Oc-bZD"/>
+                <outlet property="followingLabel" destination="TjW-A2-SDD" id="QS0-jO-fH1"/>
+                <outlet property="headerBackgroundImageView" destination="5EW-TL-Qtl" id="Pa3-dL-Nf4"/>
+                <outlet property="headerProfilePhotoImageView" destination="4w0-zM-eeA" id="0LT-CL-ECP"/>
+                <outlet property="nameLabel" destination="Azj-vd-zRL" id="iZn-kH-xyI"/>
+                <outlet property="tweetsLabel" destination="061-QW-3iu" id="x4C-XW-qSG"/>
+            </connections>
             <point key="canvasLocation" x="36.5" y="-678.5"/>
         </view>
     </objects>

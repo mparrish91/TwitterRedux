@@ -60,10 +60,13 @@ class TRProfileViewController: UIViewController, UITableViewDataSource, UITableV
         headerProfilePhotoImageView.setImageWith(user.profileURL!)
         headerBackgroundImageView.setImageWith(user.profileBackgroundURL!)
         navigationController?.navigationBar.topItem?.title = user.name
-
         }
         
 //        headerView.isHidden = true
+        
+        self.tweetsTableView.register(
+            UINib(nibName: "TRProfileHeaderView", bundle:nil),
+            forCellReuseIdentifier: "xibheader")
         
     }
     
@@ -122,6 +125,23 @@ class TRProfileViewController: UIViewController, UITableViewDataSource, UITableV
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+     func tableView(tableView: UITableView,
+                            viewForHeaderInSection section: Int) -> UIView?
+    {
+        
+        var view = TRProfileHeaderView.instanceFromNib()
+        return view
+        
+
+//        return tableView.dequeueReusableCellWithIdentifier("header") as? UIView
+    }
+    
+    
+     func tableView(tableView: UITableView,
+                            heightForHeaderInSection section: Int) -> CGFloat {
+        return 80
     }
     
 //    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

@@ -11,11 +11,11 @@ import AFNetworking
 
 class TRTimelineViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var tweetsTableView: UITableView!
+    
     var tweets: [TRTweet] = []
     var currentSelectedIndex = -1
     let refreshControl = UIRefreshControl()
-    
-    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,11 +25,11 @@ class TRTimelineViewController: UIViewController, UITableViewDataSource, UITable
         // Initialize a pull to refresh UIRefreshControl
         refreshControl.addTarget(self, action: #selector(fetchTimeline), for: UIControlEvents.valueChanged)
         // add refresh control to table view
-        tableView.insertSubview(refreshControl, at: 0)
+        tweetsTableView.insertSubview(refreshControl, at: 0)
         
         // Do any additional setup after loading the view.
-        tableView.estimatedRowHeight = 50
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tweetsTableView.estimatedRowHeight = 50
+        tweetsTableView.rowHeight = UITableViewAutomaticDimension
         
         // load the model and views
         fetchTimeline()
@@ -41,7 +41,7 @@ class TRTimelineViewController: UIViewController, UITableViewDataSource, UITable
         TRTwitterNetworkingClient.sharedInstance.fetchTimeline(completion: { (response) in
             if let response = response {
                 self.tweets = response
-                self.tableView.reloadData()
+                self.tweetsTableView.reloadData()
                 self.refreshControl.endRefreshing()
             }
         }) { (error) in
