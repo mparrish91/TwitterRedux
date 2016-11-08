@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TwitterRedux/TRProfileViewController.swift"
-            timestampString = "500261118.339217"
+            timestampString = "500278931.838195"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
             landmarkName = "TRProfileViewController"
             landmarkType = "3">
          </BreakpointContent>

@@ -60,6 +60,7 @@ class TRTimelineViewController: UIViewController, UITableViewDataSource, UITable
         // Set model
         let tweet = tweets[indexPath.row]
         cell.tweet = tweet
+        cell.delegate = self
         
         // Configure cell
         if let text = tweet.text {
@@ -100,7 +101,7 @@ class TRTimelineViewController: UIViewController, UITableViewDataSource, UITable
     func profilePhotoImageViewTapped(tweet: TRTweet) {
         
         let username = tweet.user?.screenname
-        var profileVC = TRProfileViewController.instantiateCustom(username: username)
+        var profileVC = TRProfileViewController.instantiateCustom(username: username!)
         self.navigationController?.pushViewController(profileVC, animated: true)
 
     }

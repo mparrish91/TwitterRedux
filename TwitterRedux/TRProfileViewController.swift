@@ -56,23 +56,18 @@ class TRProfileViewController: UIViewController, UITableViewDataSource, UITableV
         
         TRTwitterNetworkingClient.sharedInstance.fetchUserAccount(screenname: username,completion: { (user: TRUser) in
             // Save current user account
-            if let usr = user {
-                tweetsLabel.text = String(usr.totalTweets)
-                followersLabel.text = String(usr.totalFollowers)
-                followingLabel.text = String(usr.totalFollowing)
-                nameLabel.text = usr.name
-                accountLabel.text = "@" + usr.screenname!
-                headerProfilePhotoImageView.setImageWith(usr.profileURL!)
-                headerBackgroundImageView.setImageWith(usr.profileBackgroundURL!)
-                navigationController?.navigationBar.topItem?.title = usr.name
-                
-                
-            }            }, failure: { (error: Error) in
+            profileVC.tweetsLabel.text = String(user.totalTweets)
+            profileVC.followersLabel.text = String(user.totalFollowers)
+            profileVC.followingLabel.text = String(user.totalFollowing)
+            profileVC.nameLabel.text = user.name
+            profileVC.accountLabel.text = "@" + user.screenname!
+            profileVC.headerProfilePhotoImageView.setImageWith(user.profileURL!)
+            profileVC.headerBackgroundImageView.setImageWith(user.profileBackgroundURL!)
+            profileVC.navigationController?.navigationBar.topItem?.title = user.name
+            
+            }, failure: { (error: Error) in
         })
 
-    
-    
-    
     
         return profileVC
     }
@@ -172,15 +167,25 @@ class TRProfileViewController: UIViewController, UITableViewDataSource, UITableV
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-     func tableView(tableView: UITableView,
+     func tableView(_ tableView: UITableView,
                             viewForHeaderInSection section: Int) -> UIView?
     {
         
-        var view = TRProfileHeaderView.instanceFromNib()
+        let view = TRProfileHeaderView.instanceFromNib() as! TRProfileHeaderView
+        if let user = TRUser.currentUser {
+            view.tweetsLabel.text = String(user.totalTweets)
+            view.followersLabel.text = String(user.totalFollowers)
+            view.followingLabel.text = String(user.totalFollowing)
+            view.nameLabel.text = user.name
+            view.accountLabel.text = "@" + user.screenname!
+            view.headerProfilePhotoImageView.setImageWith(user.profileURL!)
+            view.headerBackgroundImageView.setImageWith(user.profileBackgroundURL!)
+            navigationController?.navigationBar.topItem?.title = user.name
+        }
+
         return view
         
 
-//        return tableView.dequeueReusableCellWithIdentifier("header") as? UIView
     }
     
     
