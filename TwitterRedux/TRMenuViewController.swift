@@ -54,16 +54,10 @@ class TRMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: "MenuHeaderCell", for: indexPath) as! TRMenuHeaderTableViewCell
             
-            cell.nameLabel?.text = "Gil Turner"
-            cell.descriptionLabel?.text = "Co-founder at YC"
-            
-            cell.profilePhotoImageView.image = UIImage(named: "profile")
-            
-            
             if let user = TRUser.currentUser
             {
                 cell.nameLabel.text = user.name
-                cell.descriptionLabel?.text = user.description
+                cell.descriptionLabel?.text = user.userDescription
                 if let url = user.profileURL {
                     cell.profilePhotoImageView.setImageWith(url)
                 }
