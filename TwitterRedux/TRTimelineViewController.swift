@@ -100,28 +100,7 @@ class TRTimelineViewController: UIViewController, UITableViewDataSource, UITable
     func profilePhotoImageViewTapped(tweet: TRTweet) {
         
         let username = tweet.user?.screenname
-        var passedTweetArray: [TRTweet] = []
-        //fetch user info
-
-        
-        //fetch timeline
-
-        TRTwitterNetworkingClient.sharedInstance.fetchUserTimeline(screenname: username!,completion: { (response) in
-            if let response = response {
-                passedTweetArray = response
-            }
-        }) { (error) in
-            if let error = error {
-                print("Error: \(error.localizedDescription)")
-            }
-        }
-
-        
-        
-        //fetch tweet
-        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-
-        let profileVC = self.storyboard?.instantiateViewController(withIdentifier: "TRProfileViewController") as! TRProfileViewController
+        var profileVC = TRProfileViewController.instantiateCustom(username: username)
         self.navigationController?.pushViewController(profileVC, animated: true)
 
     }

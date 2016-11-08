@@ -32,13 +32,20 @@ class TRProfileViewController: UIViewController, UITableViewDataSource, UITableV
 
     @IBOutlet weak var headerView: UIView!
     
+    
+
+    
     static func instantiateCustom(username: String) -> TRProfileViewController
     {
+        let profileVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TRProfileViewController") as! TRProfileViewController
+        //fetch user
+
+        
         //fetch timeline
         
         TRTwitterNetworkingClient.sharedInstance.fetchUserTimeline(screenname: username,completion: { (response) in
             if let response = response {
-                self.tweets = response
+                profileVC.tweets = response
             }
         }) { (error) in
             if let error = error {
@@ -47,11 +54,29 @@ class TRProfileViewController: UIViewController, UITableViewDataSource, UITableV
         }
         
         
-        let profileVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TRProfileViewController") as! TRProfileViewController
-        
+        TRTwitterNetworkingClient.sharedInstance.fetchUserAccount(screenname: username,completion: { (user: TRUser) in
+            // Save current user account
+            if let usr = user {
+                tweetsLabel.text = String(usr.totalTweets)
+                followersLabel.text = String(usr.totalFollowers)
+                followingLabel.text = String(usr.totalFollowing)
+                nameLabel.text = usr.name
+                accountLabel.text = "@" + usr.screenname!
+                headerProfilePhotoImageView.setImageWith(usr.profileURL!)
+                headerBackgroundImageView.setImageWith(usr.profileBackgroundURL!)
+                navigationController?.navigationBar.topItem?.title = usr.name
+                
+                
+            }            }, failure: { (error: Error) in
+        })
+
+    
+    
+    
+    
         return profileVC
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

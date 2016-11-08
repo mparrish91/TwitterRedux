@@ -21,9 +21,12 @@ private let kTwitterSMCallbackURLAddress = "TwitterRedux://oauth"
 private let kTwitterSMAccessTokenPath = "oauth/access_token"
 
 private let kTwitterSMResourcePathVerifyCredential = "1.1/account/verify_credentials.json"
+private let kTwitterSMResourcePathUserShow = "1.1/users/show.json"
+
 private let kTwitterSMResourcePathStatusHomeTimeline = "1.1/statuses/home_timeline.json"
 private let kTwitterSMResourcePathStatusUserTimeline = "1.1/statuses/user_timeline.json"
 private let kTwitterSMResourcePathStatusMentionTimeline = "1.1/statuses/mentions_timeline.json"
+
 
 private let kTwitterSMResourcePathRetweet = "1.1/statuses/retweet/:id.json"
 private let kTwitterSMResourcePathRetweetIDPlaceholder = ":id"
@@ -157,6 +160,20 @@ class TRTwitterNetworkingClient: NSObject {
             }
             
             
+            }, failure: { (task: URLSessionDataTask?, error: Error) in
+                //error code
+                failure(error)
+        })
+    }
+    
+    func fetchUserAccount(screenname: String, completion: @escaping(TRUser) -> (), failure: @escaping(Error) -> ()) {
+        var params = [String: String]()
+        params["screen_name"] = screenname
+
+        sessionManager.get(kTwitterSMResourcePathUserShow, parameters: params, progress: nil, success: { (task: URLSessionDataTask, response: Any?) in
+            if let userDictionary = response as? NSDictionary {
+                completion(TRUser(with: userDictionary))
+            }
             }, failure: { (task: URLSessionDataTask?, error: Error) in
                 //error code
                 failure(error)
