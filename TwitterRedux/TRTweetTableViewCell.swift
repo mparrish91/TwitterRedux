@@ -24,7 +24,7 @@ class TRTweetTableViewCell: UITableViewCell {
     @IBOutlet weak var profilePhotoImageView: UIImageView!
     
     weak var delegate: TRTweetCellDelegate?
-    var tweets: TRTweet?
+    var tweet: TRTweet?
 
     
     override func awakeFromNib() {
@@ -35,7 +35,7 @@ class TRTweetTableViewCell: UITableViewCell {
     }
     
     func tapEdit(sender: UITapGestureRecognizer) {
-//        delegate?.myTableDelegate()
+        delegate?.profilePhotoImageViewTapped(tweet: tweet!)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

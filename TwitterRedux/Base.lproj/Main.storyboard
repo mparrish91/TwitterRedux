@@ -118,7 +118,7 @@
         <!--Profile View Controller-->
         <scene sceneID="oh5-Ac-ZXk">
             <objects>
-                <viewController id="WgJ-b8-XTf" customClass="TRProfileViewController" customModule="TwitterRedux" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TRProfileViewController" id="WgJ-b8-XTf" customClass="TRProfileViewController" customModule="TwitterRedux" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="v6c-AL-5yo"/>
                         <viewControllerLayoutGuide type="bottom" id="Hq3-qb-Lj4"/>

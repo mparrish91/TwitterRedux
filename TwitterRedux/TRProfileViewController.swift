@@ -32,6 +32,26 @@ class TRProfileViewController: UIViewController, UITableViewDataSource, UITableV
 
     @IBOutlet weak var headerView: UIView!
     
+    static func instantiateCustom(username: String) -> TRProfileViewController
+    {
+        //fetch timeline
+        
+        TRTwitterNetworkingClient.sharedInstance.fetchUserTimeline(screenname: username,completion: { (response) in
+            if let response = response {
+                self.tweets = response
+            }
+        }) { (error) in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+            }
+        }
+        
+        
+        let profileVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TRProfileViewController") as! TRProfileViewController
+        
+        return profileVC
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

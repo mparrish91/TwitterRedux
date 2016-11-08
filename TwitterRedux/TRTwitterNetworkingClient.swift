@@ -138,8 +138,8 @@ class TRTwitterNetworkingClient: NSObject {
         })
     }
     
-    func fetchUserTimeline(completion: @escaping([TRTweet]?) -> (), failure: @escaping(Error?) -> ()) {
-        kTwitterSMHUserimelineParameters["user_id"] = "poop"
+    func fetchUserTimeline(screenname: String, completion: @escaping([TRTweet]?) -> (), failure: @escaping(Error?) -> ()) {
+        kTwitterSMHUserimelineParameters["screen_name"] = screenname
         sessionManager.get(kTwitterSMResourcePathStatusUserTimeline, parameters: kTwitterSMHUserimelineParameters, progress: nil, success: { (task: URLSessionDataTask, response: Any?) in
             // completion code
             print("Timeline retrieved")

@@ -9,7 +9,7 @@
 import UIKit
 import AFNetworking
 
-class TRTimelineViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class TRTimelineViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, TRTweetCellDelegate {
     
     @IBOutlet weak var tweetsTableView: UITableView!
     
@@ -59,6 +59,7 @@ class TRTimelineViewController: UIViewController, UITableViewDataSource, UITable
         
         // Set model
         let tweet = tweets[indexPath.row]
+        cell.tweet = tweet
         
         // Configure cell
         if let text = tweet.text {
@@ -93,6 +94,37 @@ class TRTimelineViewController: UIViewController, UITableViewDataSource, UITable
         currentSelectedIndex = indexPath.row
         tableView.deselectRow(at: indexPath, animated: true)
 }
+    
+    // MARK: Cell delegate methods
+    
+    func profilePhotoImageViewTapped(tweet: TRTweet) {
+        
+        let username = tweet.user?.screenname
+        var passedTweetArray: [TRTweet] = []
+        //fetch user info
+
+        
+        //fetch timeline
+
+        TRTwitterNetworkingClient.sharedInstance.fetchUserTimeline(screenname: username!,completion: { (response) in
+            if let response = response {
+                passedTweetArray = response
+            }
+        }) { (error) in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+            }
+        }
+
+        
+        
+        //fetch tweet
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+
+        let profileVC = self.storyboard?.instantiateViewController(withIdentifier: "TRProfileViewController") as! TRProfileViewController
+        self.navigationController?.pushViewController(profileVC, animated: true)
+
+    }
 
 
 //    // MARK: Actions
